@@ -6,10 +6,6 @@ app = Flask(__name__)
 conn = psycopg2.connect(database="service_db", user="postgres", password="123", host="localhost", port="5432")
 cursor = conn.cursor()
 
-@app.route('/login/', methods=['GET'])
-def index():
-     return render_template('login.html')
-
 @app.route('/login/', methods=['POST', 'GET'])
 def login():
      if request.method == 'POST':
